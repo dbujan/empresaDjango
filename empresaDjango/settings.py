@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+# ADDED FOR HEROKU
+import dj_database_url
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,9 +26,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '_!(7ap^v!5m8dvcw0p6*h6(rqfydvzcla&dw%_=(0qmw@3ns)f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# CHANGED FOR HEROKU
+DEBUG = False
 
-ALLOWED_HOSTS = []
+# CHANGED FOR HEROKU
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
@@ -78,9 +83,16 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'USER': 'name',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',        
     }
 }
 
+# ADDED FOR HEROKU
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
