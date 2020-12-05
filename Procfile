@@ -1,1 +1,1 @@
-web: gunicorn empresadjango.wsgi --log-file -
+web: gunicorn empresaDjango.wsgi.application --log-file -
