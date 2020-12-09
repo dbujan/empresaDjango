@@ -23,14 +23,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
+# python manage.py check --deploy
+
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = '_!(7ap^v!5m8dvcw0p6*h6(rqfydvzcla&dw%_=(0qmw@3ns)f'
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '_!(7ap^v!5m8dvcw0p6*h6(rqfydvzcla&dw%_=(0qmw@3ns)f')
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
-DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', False) )
+
+# enabling HTTP Strict Transport Security
+#SECURE_HSTS_SECONDS = 60
+
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com'] # ADDED FOR HEROKU
 
