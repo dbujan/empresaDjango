@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '_!(7ap^v!5m8dvcw0p6*h6(rqfydvz
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
-DEBUG = bool( os.environ.get('DJANGO_DEBUG', False) )
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
 # enabling HTTP Strict Transport Security
 #SECURE_HSTS_SECONDS = 60
