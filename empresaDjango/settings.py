@@ -24,10 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '_!(7ap^v!5m8dvcw0p6*h6(rqfydvzcla&dw%_=(0qmw@3ns)f'
+#SECRET_KEY = '_!(7ap^v!5m8dvcw0p6*h6(rqfydvzcla&dw%_=(0qmw@3ns)f'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '_!(7ap^v!5m8dvcw0p6*h6(rqfydvzcla&dw%_=(0qmw@3ns)f')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com'] # ADDED FOR HEROKU
 
@@ -141,9 +144,9 @@ STATIC_URL = '/static/'
 # ADDED FOR HEROKU
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+#STATICFILES_DIRS = (
+#    os.path.join(BASE_DIR, 'static'),
+#)
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
