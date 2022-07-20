@@ -20,6 +20,10 @@
         <li>
             <a href="{% url 'detail' empleado.departamento.id %}">{{ empleado.departamento}}</a>
         </li>
+        <li>
+            {% load static %}
+            <img alt="{{ empleado.foto.name }}" src="{% static empleado.foto.name %}" />
+        </li>    
     </ul>
 	<h3>Lista de habilidades</h3>
 	{% if habilidades %}
