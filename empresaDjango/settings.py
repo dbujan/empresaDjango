@@ -11,8 +11,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 # ADDED FOR HEROKU
+import dj_database_url
+import django_heroku
+
 import os
-#import django_heroku
 
 from pathlib import Path
 
@@ -36,9 +38,9 @@ DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 # enabling HTTP Strict Transport Security
 #SECURE_HSTS_SECONDS = 60
 
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+#SECURE_SSL_REDIRECT = True
+#SESSION_COOKIE_SECURE = True
+#CSRF_COOKIE_SECURE = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com'] # ADDED FOR HEROKU
 
@@ -88,10 +90,21 @@ WSGI_APPLICATION = 'empresaDjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'empresadjango',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost',
+        'PORT': '5433',        
     }
 }
 
@@ -107,8 +120,8 @@ DATABASES = {
 #}
 
 # ADDED FOR HEROKU
-#db_from_env = dj_database_url.config(conn_max_age=500)
-#DATABASES['default'].update(db_from_env)
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
