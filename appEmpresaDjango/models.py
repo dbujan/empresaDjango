@@ -22,6 +22,6 @@ class Empleado(models.Model):
  # Es posible indicar un valor por defecto mediante 'default'
  antiguedad = models.IntegerField(default=0)
  # Para permitir propiedades con valor null, añadiremos las opciones null=True, blank=True.        	
- foto = models.ImageField(upload_to='static/img',blank=True,null=True,verbose_name='Image')
+ foto = models.ImageField(upload_to='img',blank=True,null=True,verbose_name='Image')
  def __str__(self):
         return self.nombre
