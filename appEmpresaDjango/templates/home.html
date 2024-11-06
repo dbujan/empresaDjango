@@ -16,7 +16,7 @@
 	        </p> -->
 	    </header>
 	    <div class="post-description">
-	    	<p>{{ e.departamento }}</a>
+	    	<p><a href="{% url 'detail' e.departamento.id %}">{{ e.departamento }}</a>
 	        </p>
 	    </div>
 	</section>  
