@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'empresaDjango.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/empresadjangodb',
+        default='postgresql://postgres:postgres@localhost:5432/empresaDjangoDB',
         conn_max_age=600
     )
 }
