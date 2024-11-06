@@ -31,7 +31,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',       # Allows requests from localhost
     '127.0.0.1',       # Allows requests from the local machine (loopback address)
-    '.render.com', # Replace with your actual domain
+    'empresadjango-aaq3.onrender.com', # Replace with your actual domain
 ]
 
 # Application definition
