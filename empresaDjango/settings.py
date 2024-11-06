@@ -28,7 +28,11 @@ SECRET_KEY = '_!(7ap^v!5m8dvcw0p6*h6(rqfydvzcla&dw%_=(0qmw@3ns)f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',       # Allows requests from localhost
+    '127.0.0.1',       # Allows requests from the local machine (loopback address)
+    '.render.com', # Replace with your actual domain
+]
 
 # Application definition
 
