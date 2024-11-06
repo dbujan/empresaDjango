@@ -1,12 +1,14 @@
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.shortcuts import render
 from .models import Departamento, Habilidad, Empleado
+from django.db.models import Max
 
 #devuelve el listado de empresas
 
 def home(request):
 	departamentos = get_list_or_404(Departamento.objects.order_by('nombre'))
-	empleadosFiltrados = Empleado.objects.raw('SELECT * FROM( SELECT * FROM appEmpresaDjango_Empleado ORDER BY antiguedad DESC) GROUP BY departamento_id ')
+	#empleadosFiltrados = Empleado.objects.raw('SELECT * FROM( SELECT * FROM appEmpresaDjango_empleado ORDER BY antiguedad DESC) GROUP BY departamento_id ')
+	empleadosFiltrados = ( Empleado.objects.annotate(max_antiguedad=Max('antiguedad')).order_by('departamento_id', '-antiguedad').distinct('departamento_id') )
 	context = {'empleadosFiltrados': empleadosFiltrados }
 	return render(request, 'home.html', context)
 
