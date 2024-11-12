@@ -15,7 +15,7 @@ services:
       - key: DATABASE_URL
         fromDatabase:
           name: empresadjangodb
-          property: postgresql://empresadjangodb_user:yHdjn8yOwCwHvfG07NNslt8ptjigR5GC@dpg-cslsp7l6l47c73aaeca0-a/empresadjangodb
+          property: connectionString
       - key: SECRET_KEY
         generateValue: true
       - key: WEB_CONCURRENCY
