@@ -1,7 +1,7 @@
 databases:
   - name: empresaDjangoDB
     plan: free
-    databaseName: empresadjangodb
+    databaseName: empresadjangodb_qze1
     user: empresadjangodb_user
 
 services:
