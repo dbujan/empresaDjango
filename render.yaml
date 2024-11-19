@@ -1,8 +1,8 @@
 databases:
   - name: empresaDjangoDB
     plan: free
-    databaseName: empresadjangodb_qze1
-    user: empresadjangodb_user
+    databaseName: empresaDjangoDB
+    user: adminDjango
 
 services:
   - type: web
