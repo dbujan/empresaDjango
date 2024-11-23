@@ -31,8 +31,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',       # Allows requests from localhost
     '127.0.0.1',       # Allows requests from the local machine (loopback address)
-    'empresadjango-aaq3.onrender.com', # Replace with your actual domain
-    'empresadjango-v9ot.onrender.com'
+    'empresadjango-v9ot.onrender.com', # Replace with your actual domain
 ]
 
 # Application definition
@@ -93,7 +92,7 @@ DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
         # default='postgresql://postgres:postgres@localhost:5434/empresaDjangoDB',
-        # default='postgresql://empresadjangodb_user:s7a2ehpINgy2U0EyZP91ELbP2ItaCeXi@dpg-csprhkrtq21c7391eb5g-a/empresadjangodb_qze1',
+        default='postgresql://empresadjangodb_user:s7a2ehpINgy2U0EyZP91ELbP2ItaCeXi@dpg-csprhkrtq21c7391eb5g-a/empresadjangodb_qze1',
         conn_max_age=600
     )
 }
