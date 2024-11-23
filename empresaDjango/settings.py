@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [
     'localhost',       # Allows requests from localhost
     '127.0.0.1',       # Allows requests from the local machine (loopback address)
     'empresadjango-aaq3.onrender.com', # Replace with your actual domain
+    'empresadjango-v9ot.onrender.com'
 ]
 
 # Application definition
