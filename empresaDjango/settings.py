@@ -137,8 +137,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 #STATIC_ROOT = BASE_DIR / '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Usa 'staticfiles' como estándar
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Si tienes otros directorios estáticos
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # Usa 'staticfiles' como estándar
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Si tienes otros directorios estáticos
 
 COLLECTSTATIC_IGNORE_CONFLICTS = True
 
