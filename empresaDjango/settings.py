@@ -93,7 +93,7 @@ DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
         # default='postgresql://postgres:postgres@localhost:5434/empresaDjangoDB',
-        default='postgresql://empresadjangodb_user:s7a2ehpINgy2U0EyZP91ELbP2ItaCeXi@dpg-csprhkrtq21c7391eb5g-a/empresadjangodb_qze1',
+        # default='postgresql://empresadjangodb_user:s7a2ehpINgy2U0EyZP91ELbP2ItaCeXi@dpg-csprhkrtq21c7391eb5g-a/empresadjangodb_qze1',
         conn_max_age=600
     )
 }
