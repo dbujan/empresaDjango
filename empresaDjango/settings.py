@@ -33,7 +33,7 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = [
     'localhost',       # Allows requests from localhost
     '127.0.0.1',       # Allows requests from the local machine (loopback address)
-    'empresadjango-49qp.onrender.com', # Replace with your actual domain
+    'empresadjango-4n7m.onrender.com', # Replace with your actual domain
 ]
 
 # Application definition
