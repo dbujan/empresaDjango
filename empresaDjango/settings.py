@@ -24,11 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '_!(7ap^v!5m8dvcw0p6*h6(rqfydvzcla&dw%_=(0qmw@3ns)f'
-#os.getenv('SECRET_KEY', 'default-secret-key')  # Usa una clave por defecto solo en desarrollo
+os.getenv('SECRET_KEY', 'default-secret-key')  # Usa una clave por defecto solo en desarrollo
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-#DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
     'localhost',       # Allows requests from localhost
@@ -93,12 +93,12 @@ WSGI_APPLICATION = 'empresaDjango.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5434/empresaDjangoDB',
+        # default='postgresql://postgres:postgres@localhost:5434/empresaDjangoDB',
         # default='postgresql://empresadjangodb_user:s7a2ehpINgy2U0EyZP91ELbP2ItaCeXi@@dpg-csprhkrtq21c7391eb5g-a.oregon-postgres.render.com:5432/empresadjangodb_qze1',
-        #default=os.getenv('DATABASE_URL'),
+        default=os.getenv('DATABASE_URL'),
         conn_max_age=600,
     )
-}   
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
